@@ -1,3 +1,4 @@
+const path = require('node:path')
 const rspack = require('@rspack/core')
 const refreshPlugin = require('@rspack/plugin-react-refresh')
 

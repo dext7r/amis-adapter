@@ -16,7 +16,7 @@
 
 ### 🏠 [Homepage](https://github.com/dext7r/amis-adapter)
 
-### ✨ [Demo](amis-adapter.h7ml.cn)
+### ✨ [Demo](https://amis-adapter.h7ml.cn)
 
 ## Install
 
@@ -32,7 +32,7 @@ npm install
 
 ## 🤝 Contributing
 
-Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://github.com/dext7r/amis-adapter/issues). You can also take a look at the [contributing guide](https://github.com/dext7r/amis-adapter/blob/master/CONTRIBUTING.md).
+Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://github.com/dext7r/amis-adapter/issues)
 
 ## Show your support
 
