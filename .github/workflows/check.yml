@@ -147,11 +147,13 @@ jobs:
           pnpm build
           pnpm build:docs
           pnpm build:examples:vue2.7
+          pnpm build:examples:vue-editor2.7
           mkdir -p dist/doc
           mkdir -p dist/vue2.7
+          mkdir -p dist/vue-editor2.7
           mv packages/docs/doc/* dist/doc/
           cp -r examples/vue2.7/dist/* dist/vue2.7/
-          cp -r examples/vue2.7/dist/static/ dist/static/
+          cp -r examples/vue-editor2.7/dist/* dist/vue-editor2.7/
       # - name: Deploy for gh-pages
       #   uses: JamesIves/github-pages-deploy-action@v4.4.1
       #   with:
