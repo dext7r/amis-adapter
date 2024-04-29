@@ -7,8 +7,6 @@
   "version": "1.0.0",
   "homepage": "https://github.com/dext7r/amis-adapter",
   "scripts": {
-    "dev": "NODE_ENV=development rspack serve",
-    "build": "NODE_ENV=production rspack build",
     "lint": "eslint .",
     "dev:docs": "pnpm --filter @amis-adapter/docs dev",
     "dev:examples:vue2.7": "pnpm --filter  @examples/vue2.7 dev",
@@ -50,7 +48,7 @@
   "bugs": {
     "url": "https://github.com/dext7r/amis-adapter/issues"
   },
-  "dependencies": {
+  "devDependencies": {
     "@fortawesome/fontawesome-free": "^6.5.2",
     "amis": "^6.3.0",
     "amis-editor": "^6.3.0",
@@ -58,19 +56,8 @@
     "amis-formula": "^6.3.0",
     "amis-theme-editor-helper": "^2.0.26",
     "amis-ui": "^6.3.0",
-    "monaco-editor": "^0.48.0",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1"
-  },
-  "devDependencies": {
     "@antfu/eslint-config": "^2.16.0",
-    "@rspack/cli": "0.6.3",
-    "@rspack/core": "0.6.3",
-    "@rspack/plugin-react-refresh": "0.6.3",
-    "@types/react": "^18.3.1",
-    "@types/react-dom": "^18.3.0",
     "eslint": "^9.1.1",
-    "react-refresh": "^0.14.2",
     "typescript": "^5.4.5",
     "vue-tsc": "^2.0.14"
   }

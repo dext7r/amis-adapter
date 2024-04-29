@@ -11,7 +11,7 @@ export default defineConfig({
     light: '/rspress-light-logo.png',
     dark: '/rspress-dark-logo.png',
   },
-  base: '/doc/',
+  base: '/',
   builderConfig: {
     output: {
       // assetPrefix: './amis-adapter/doc/',

@@ -144,14 +144,13 @@ jobs:
         env:
           PUBLIC_PATH_PREFIX: '/amis-adapter/'
         run: |
-          pnpm build
           pnpm build:docs
           pnpm build:examples:vue2.7
           pnpm build:examples:vue-editor2.7
-          mkdir -p dist/doc
+          mkdir -p dist
           mkdir -p dist/vue2.7
           mkdir -p dist/vue-editor2.7
-          mv packages/docs/doc/* dist/doc/
+          mv packages/docs/doc/* dist/
           cp -r examples/vue2.7/dist/* dist/vue2.7/
           cp -r examples/vue-editor2.7/dist/* dist/vue-editor2.7/
           cp -r examples/vue2.7/dist/staticVue2.7/ dist/staticVue2.7/
