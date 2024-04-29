@@ -150,7 +150,7 @@ jobs:
           mkdir -p dist/doc
           mkdir -p dist/vue2.7
           mv packages/docs/doc/* dist/doc/
-          cp examples/vue2.7/dist/* dist/vue2.7/
+          cp -r examples/vue2.7/dist/* dist/vue2.7/
           cp -r examples/vue2.7/static/ dist/static/
       # - name: Deploy for gh-pages
       #   uses: JamesIves/github-pages-deploy-action@v4.4.1
