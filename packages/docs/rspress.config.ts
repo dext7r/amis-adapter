@@ -5,11 +5,11 @@ export default defineConfig({
   root: path.join(__dirname, 'docs'),
   title: 'amis-adapter',
   outDir: 'doc',
-  description: 'Rspack-based Static Site Generator',
-  icon: '/rspress-icon.png',
+  description: '👷‍♂️旨在增强 amis 系列产品的开发体验--@baidu/amis的生态扩展',
+  icon: 'https://nakoruru.h7ml.cn/proxy/avatars.githubusercontent.com/u/69443639?s=200&v=4',
   logo: {
-    light: '/rspress-light-logo.png',
-    dark: '/rspress-dark-logo.png',
+    light: 'https://nakoruru.h7ml.cn/proxy/avatars.githubusercontent.com/u/69443639?s=200&v=4',
+    dark: 'https://nakoruru.h7ml.cn/proxy/avatars.githubusercontent.com/u/69443639?s=200&v=4',
   },
   base: '/',
   builderConfig: {

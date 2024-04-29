@@ -1,37 +1,39 @@
 ---
 pageType: home
+titleSuffix: '👷‍♂️旨在增强 amis 系列产品的开发体验--@baidu/amis的生态扩展'
 
 hero:
   name: amis-adapter
-  text: Rspack-based Static Site Generator
-  tagline: amis-adapter tagline
+  text: amis的生态扩展
   actions:
     - theme: brand
-      text: Quick Start
+      text: 介绍
       link: /guide/
     - theme: alt
       text: Github
-      link: https://github.com/web-infra-dev/rspress
+      link: https://github.com/dext7r/amis-adapter
   image:
-    src: /rspress-icon.png
+    src: https://avatars.githubusercontent.com/u/69443639?s=200&v=4
     alt: amis-adapter Logo
 features:
-  - title: Blazing fast build speed
-    details: The core compilation module is based on the Rust front-end toolchain, providing a more ultimate development experience.
+  - title: vue2.7 && amis@6.3.0
+    details: 基于vue@2.7和amis@6.3.0 使用示例
+    link: https://amis-adapter.h7ml.cn/vue2.7
     icon: 🏃🏻‍♀️
-  - title: Support for MDX content writing
-    details: MDX is a powerful way to write content, allowing you to use React components in Markdown.
-    icon: 📦
-  - title: Built-in full-text search
-    details: Automatically generates a full-text search index for you during construction, providing out-of-the-box full-text search capabilities.
-    icon: 🎨
-  - title: Simpler I18n solution
-    details: With the built-in I18n solution, you can easily provide multi-language support for documents or components.
+  - title: vue3 && amis@6.3.0
+    details: 基于vue@3 和amis@6.3.0 使用示例
+    icon: 👷‍♂️
+  - title: react@18 && amis@6.3.0
+    details: 基于react 和amis@6.3.0 使用示例
+    icon: 👷‍♂️
+  - title: vue2.7 && amis-editor@5.2.0
+    details: 基于vue@2.7和amis-editor@5.2.0 使用示例
+    link: https://amis-adapter.h7ml.cn/vue-editor2.7/
     icon: 🌍
-  - title: Static site generation
-    details: In production, it automatically builds into static HTML files, which can be easily deployed anywhere.
-    icon: 🌈
-  - title: Providing multiple custom capabilities
-    details: Through its extension mechanism, you can easily extend theme UI and build process.
-    icon: 🔥
+  - title: vue3 && amis-editor@5.2.0
+    details: 基于vue@3 和amis-editor@5.2.0 使用示例
+    icon: 👷‍♂️
+  - title: react@18 && amis-editor@5.2.0
+    details: 基于react 和amis-editor@5.2.0 使用示例
+    icon: 👷‍♂️
 ---
