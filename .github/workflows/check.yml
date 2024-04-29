@@ -141,8 +141,8 @@ jobs:
         run: pnpm install
 
       - name: Build Site
-        env:
-          PUBLIC_PATH: '/amis-adapter/'
+        # env:
+        #   PUBLIC_PATH: '/amis-adapter/'
         run: |
           pnpm build
           pnpm build:docs
