@@ -17,7 +17,7 @@
     "amis-core": "2.0.2",
     "amis-editor": "5.1.9-beta.0",
     "amis-ui": "2.0.2",
-    "axios": "^0.27.2",
+    "axios": "^0.28.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-redux": "^8.0.2",
