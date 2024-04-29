@@ -71,7 +71,7 @@ jobs:
         run: pnpm run type-check
 
   build:
-    if: github.event_name == 'pull_request'  || github.event_name == 'push'  || github.event.inputs.job_name == 'all' || github.event.inputs.job_name == 'build'
+    if: github.event.inputs.job_name == 'all' || github.event.inputs.job_name == 'build'
     runs-on: ${{ matrix.os }}
     timeout-minutes: 10
     strategy:
@@ -146,7 +146,8 @@ jobs:
         run: |
           pnpm build
           pnpm build:docs
-          cp -r packages/docs/doc dist/doc
+          mkdir -p dist/doc
+          mv packages/docs/doc/* dist/doc/
       # - name: Deploy for gh-pages
       #   uses: JamesIves/github-pages-deploy-action@v4.4.1
       #   with:
