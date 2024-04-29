@@ -41,6 +41,9 @@ export default (/** if you want to use mode : { mode } */) => {
       ],
     },
     plugins: [
+      process.env.PUBLIC_PATH_PREFIX ?
+      addPrefixPlugin('/vue2.7')
+       : null,
       viteStaticCopy({
         targets: [
           {
@@ -50,7 +53,6 @@ export default (/** if you want to use mode : { mode } */) => {
         ],
       }),
       createVuePlugin(/* options */),
-      process.env.PUBLIC_PATH_PREFIX ? addPrefixPlugin('/vue2.7/') : null,
       legacy({
         targets: ['ie >= 11'],
         additionalLegacyPolyfills: ['regenerator-runtime/runtime'],
