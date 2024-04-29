@@ -148,7 +148,7 @@ jobs:
           pnpm build:examples:vue2.7
           pnpm build:examples:vue-editor2.7
           pnpm build:examples:amis-editor-react
-          mkdir -p dist
+          mkdir  dist dist/vue-editor2.7 dist/vue2.7 dist/amis-editor-react dist/staticVue2.7 dist/staticVue-editor2.7 dist/static-amis-editor-react
           mv packages/docs/doc/* dist/
           cp -r examples/vue2.7/dist/* dist/vue2.7/
           cp -r examples/vue-editor2.7/dist/* dist/vue-editor2.7/
