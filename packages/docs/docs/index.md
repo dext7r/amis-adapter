@@ -32,7 +32,7 @@ features:
     icon: 🌍
   - title: vue3 && amis-editor@5.2.0
     details: 基于vue@3 和amis-editor@5.2.0 使用示例
-    link: https://amis-adapter.h7ml.cn/amis-editor-webpack
+    link: https://amis-editor-webpack.h7ml.cn/
     icon: 🎨
   - title: react@18 && amis-editor@5.2.0
     details: 基于react@18 和amis-editor@5.2.0 使用示例

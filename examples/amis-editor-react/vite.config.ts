@@ -15,7 +15,7 @@ export default defineConfig({
     rollupOptions: {
       output: {
         // 在这里修改静态资源路径
-        chunkFileNames: 'static-amis-editor-react/assets/js/[name]-[hash].js',
+        chunkFileNames: 'static-amis-editor-react/js/[name]-[hash].js',
         entryFileNames: 'static-amis-editor-react/js/[name]-[hash].js',
         assetFileNames: 'static-amis-editor-react/[ext]/[name]-[hash].[ext]',
       },

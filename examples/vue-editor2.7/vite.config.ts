@@ -19,9 +19,9 @@ export default (/** if you want to use mode : { mode } */) => {
       rollupOptions: {
         output: {
           // 在这里修改静态资源路径
-          chunkFileNames: 'staticVue-editor2.7/assets/js/[name]-[hash].js',
-          entryFileNames: 'staticVue-editor2.7/assets/js/[name]-[hash].js',
-          assetFileNames: 'staticVue-editor2.7/assets/[ext]/[name]-[hash].[ext]',
+          chunkFileNames: 'staticVue-editor2.7/js/[name]-[hash].js',
+          entryFileNames: 'staticVue-editor2.7/js/[name]-[hash].js',
+          assetFileNames: 'staticVue-editor2.7/[ext]/[name]-[hash].[ext]',
         },
       },
       sourcemap: true,
