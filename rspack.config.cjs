@@ -22,7 +22,7 @@ module.exports = {
         : '[name]/[name].js'
     },
     publicPath: process.env.PUBLIC_PATH ?? '/',
-    crossOriginLoading: process.env.PUBLIC_PATH ? 'anonymous' : false,
+    crossOriginLoading: process.env.PUBLIC_PATH === '/amis-adapter/' ? 'anonymous' : false,
     path: path.resolve(__dirname, 'dist'),
   },
   module: {

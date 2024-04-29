@@ -1,0 +1,21 @@
+{
+  "name": "@amis-adapter/docs",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "rspress dev",
+    "build": "rspress build",
+    "preview": "rspress preview"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dext7r/amis-adapter",
+    "directory": "packages/docs"
+  },
+  "dependencies": {
+    "rspress": "^1.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^16"
+  }
+}

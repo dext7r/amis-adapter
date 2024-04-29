@@ -1,13 +1,24 @@
 {
-  "headers": [
+  "version": 2,
+  "env": {
+    "RUNNING_ENV": "prod"
+  },
+  "cleanUrls": true,
+  "builds": [
     {
-      "source": "/(.*).(ttf|otf|woff2|woff|eot|json)",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=31536000, immutable"
-        }
-      ]
+      "src": "./dist/**",
+      "use": "@vercel/static"
+  }
+  ],
+  "outputDirectory": "dist",
+  "public": true,
+  "github": {
+    "enabled": false
+  },
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/dist/$1"
     }
   ]
 }

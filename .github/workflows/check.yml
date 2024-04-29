@@ -141,14 +141,27 @@ jobs:
         run: pnpm install
 
       - name: Build Site
-        env: 
-          PUBLIC_PATH: 'amis-adapter'      
+        env:
+          PUBLIC_PATH: '/amis-adapter/'
         run: |
           pnpm build
-      - name: Deploy for gh-pages
-        uses: JamesIves/github-pages-deploy-action@v4.4.1
+          pnpm build:docs
+          cp -r packages/docs/doc dist/doc
+      # - name: Deploy for gh-pages
+      #   uses: JamesIves/github-pages-deploy-action@v4.4.1
+      #   with:
+      #     branch: gh-pages
+      #     folder: dist
+      #     single-commit: true
+          # clean: true
+      - name: Deploy to amis-adapter.h7ml.cn
+        uses: amondnet/vercel-action@v25
         with:
-          branch: gh-pages
-          folder: dist
-          single-commit: true
-          clean: true
+          vercel-token: ${{ secrets.VERCEL_TOKEN }}
+          github-token: ${{ secrets.AUTH_TOKEN }}
+          vercel-args: '--prod'
+          vercel-org-id: ${{ secrets.ORG_ID}}
+          vercel-project-id: ${{ secrets.VERCEL_PROJECT_AMIS-ADAPTER_ID}}
+          # working-directory: ./dist
+          github-comment: true
+          alias-domains: amis-adapter.h7ml.cn
