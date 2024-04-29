@@ -19,6 +19,10 @@
     {
       "source": "/(.*)",
       "destination": "/dist/$1"
+    },
+    {
+      "source": "/amis-editor-webpack",
+      "destination": "https://amis-editor-webpack.h7ml.cn/"
     }
   ]
 }

@@ -24,7 +24,7 @@ features:
     details: 基于vue@3 和amis@6.3.0 使用示例
     icon: 👷‍♂️
   - title: react@18 && amis@6.3.0
-    details: 基于react 和amis@6.3.0 使用示例
+    details: 基于react@18 和amis@6.3.0 使用示例
     icon: 👷‍♂️
   - title: vue2.7 && amis-editor@5.2.0
     details: 基于vue@2.7和amis-editor@5.2.0 使用示例
@@ -32,8 +32,10 @@ features:
     icon: 🌍
   - title: vue3 && amis-editor@5.2.0
     details: 基于vue@3 和amis-editor@5.2.0 使用示例
-    icon: 👷‍♂️
+    link: https://amis-adapter.h7ml.cn/amis-editor-webpack
+    icon: 🎨
   - title: react@18 && amis-editor@5.2.0
-    details: 基于react 和amis-editor@5.2.0 使用示例
-    icon: 👷‍♂️
+    details: 基于react@18 和amis-editor@5.2.0 使用示例
+    link: https://amis-adapter.h7ml.cn/amis-editor-react
+    icon: 🔥
 ---
