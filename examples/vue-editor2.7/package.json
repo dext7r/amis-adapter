@@ -12,7 +12,7 @@
     "@vue/composition-api": "^1.7.2",
     "amis-editor": "5.2.0",
     "amis-ui": "6.3.0",
-    "monaco-editor": "^0.48.0",
+    "monaco-editor": "^0.30.0",
     "vite-plugin-monaco-editor": "^1.1.0",
     "vue": "^2.7.16",
     "vuera": "^0.2.7"

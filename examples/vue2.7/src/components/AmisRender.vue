@@ -173,6 +173,7 @@ export default {
         ...this.env,
       },
       () => {
+        // eslint-disable-next-line vue/require-explicit-emits
         this.$emit('ready', {
           instance,
         })

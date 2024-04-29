@@ -57,16 +57,19 @@ export default {
     },
     onChange(e) {
       this.schema = e
+      // eslint-disable-next-line vue/require-explicit-emits
       this.$emit('change', e)
     },
     onSave(e) {
       // eslint-disable-next-line no-console
       console.log(e)
+      // eslint-disable-next-line vue/require-explicit-emits
       this.$emit('onSave', e)
     },
     onPreview(e) {
       // eslint-disable-next-line no-console
       console.log(e)
+      // eslint-disable-next-line vue/require-explicit-emits
       this.$emit('onPreview', e)
     },
   },

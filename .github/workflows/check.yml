@@ -147,14 +147,18 @@ jobs:
           pnpm build:docs
           pnpm build:examples:vue2.7
           pnpm build:examples:vue-editor2.7
+          pnpm build:examples:amis-editor-react
+          pnpm build:examples:amis-editor-webpack
           mkdir -p dist
           mkdir -p dist/vue2.7
           mkdir -p dist/vue-editor2.7
           mv packages/docs/doc/* dist/
           cp -r examples/vue2.7/dist/* dist/vue2.7/
           cp -r examples/vue-editor2.7/dist/* dist/vue-editor2.7/
+          cp -r examples/amis-editor-react/dist/* dist/amis-editor-react/
           cp -r examples/vue2.7/dist/staticVue2.7/ dist/staticVue2.7/
           cp -r examples/vue-editor2.7/dist/staticVue-editor2.7/ dist/staticVue-editor2.7/
+          cp -r examples/amis-editor-react/dist/static-amis-editor-react/ dist/static-amis-editor-react/
       # - name: Deploy for gh-pages
       #   uses: JamesIves/github-pages-deploy-action@v4.4.1
       #   with:
