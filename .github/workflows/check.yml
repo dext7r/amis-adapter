@@ -154,6 +154,8 @@ jobs:
           mv packages/docs/doc/* dist/doc/
           cp -r examples/vue2.7/dist/* dist/vue2.7/
           cp -r examples/vue-editor2.7/dist/* dist/vue-editor2.7/
+          cp -r examples/vue2.7/dist/staticVue2.7/ dist/staticVue2.7/
+          cp -r examples/vue-editor2.7/dist/staticVue-editor2.7/ dist/staticVue-editor2.7/
       # - name: Deploy for gh-pages
       #   uses: JamesIves/github-pages-deploy-action@v4.4.1
       #   with:

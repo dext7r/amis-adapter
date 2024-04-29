@@ -84,6 +84,9 @@ importers:
       monaco-editor:
         specifier: ^0.48.0
         version: 0.48.0
+      vite-plugin-monaco-editor:
+        specifier: ^1.1.0
+        version: 1.1.0(monaco-editor@0.48.0)
       vue:
         specifier: ^2.7.16
         version: 2.7.16
@@ -5763,6 +5766,11 @@ packages:
     resolution: {integrity: sha512-5QJKBDc+gNYVqL/skgFAP81Yuzo9R+EAf19d+EtsMF/i8kFUpNi3J/H01QD3Oo8zBQn+NzoCIFkpPLynoOzaJg==}
     peerDependencies:
       vite: '>=2.0.0'
+
+  vite-plugin-monaco-editor@1.1.0:
+    resolution: {integrity: sha512-IvtUqZotrRoVqwT0PBBDIZPNraya3BxN/bfcNfnxZ5rkJiGcNtO5eAOWWSgT7zullIAEqQwxMU83yL9J5k7gww==}
+    peerDependencies:
+      monaco-editor: '>=0.33.0'
 
   vite-plugin-static-copy@1.0.3:
     resolution: {integrity: sha512-hBCCz6T0uNI3oF5oJ/Ju73rhoR+ADrJ2iLAea5+wA7kpQ8clYgY8BD+GL0w0BrqsYCbgBITOByBP/3y9Y+h93A==}
@@ -12964,6 +12972,10 @@ snapshots:
       vite: 4.5.3(@types/node@16.18.96)(sass@1.75.0)(terser@5.30.4)
     transitivePeerDependencies:
       - supports-color
+
+  vite-plugin-monaco-editor@1.1.0(monaco-editor@0.48.0):
+    dependencies:
+      monaco-editor: 0.48.0
 
   vite-plugin-static-copy@1.0.3(vite@4.5.3(@types/node@16.18.96)(sass@1.75.0)(terser@5.30.4)):
     dependencies:

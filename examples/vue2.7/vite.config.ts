@@ -20,9 +20,9 @@ export default (/** if you want to use mode : { mode } */) => {
       rollupOptions: {
         output: {
           // 在这里修改静态资源路径
-          chunkFileNames: 'https://amis-adapter.h7ml.cn/vue2.7/static/assets/js/[name]-[hash].js',
-          entryFileNames: 'https://amis-adapter.h7ml.cn/vue2.7/static/assets/js/[name]-[hash].js',
-          assetFileNames: 'https://amis-adapter.h7ml.cn/vue2.7/static/assets/[ext]/[name]-[hash].[ext]',
+          chunkFileNames: 'staticVue2.7/assets/js/[name]-[hash].js',
+          entryFileNames: 'staticVue2.7/assets/js/[name]-[hash].js',
+          assetFileNames: 'staticVue2.7/assets/[ext]/[name]-[hash].[ext]',
         },
       },
       sourcemap: true,

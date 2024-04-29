@@ -60,10 +60,12 @@ export default {
       this.$emit('change', e)
     },
     onSave(e) {
+      // eslint-disable-next-line no-console
       console.log(e)
       this.$emit('onSave', e)
     },
     onPreview(e) {
+      // eslint-disable-next-line no-console
       console.log(e)
       this.$emit('onPreview', e)
     },
