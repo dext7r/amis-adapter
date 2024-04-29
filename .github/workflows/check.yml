@@ -1,0 +1,154 @@
+name: check
+
+on:
+  push:
+    branches:
+      - main
+
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+    inputs:
+      job_name:
+        description: The name of the job to run
+        required: false
+        default: all
+jobs:
+  lint:
+    if: github.event_name == 'pull_request'  || github.event_name == 'push'  || github.event.inputs.job_name == 'all' || github.event.inputs.job_name == 'lint'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v2
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18.x
+          cache: pnpm
+      - name: Get pnpm store directory
+        run: |
+          echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
+      - name: Setup pnpm cache
+        uses: actions/cache@v4
+        with:
+          path: ${{ env.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-amis-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-amis-
+      - name: Install
+        run: pnpm i
+
+      - name: Lint
+        run: pnpm run lint
+
+  typecheck:
+    if: github.event.inputs.job_name == 'all' || github.event.inputs.job_name == 'typecheck'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v2
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18.x
+          cache: pnpm
+      - name: Get pnpm store directory
+        run: |
+          echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
+      - name: Setup pnpm cache
+        uses: actions/cache@v4
+        with:
+          path: ${{ env.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-amis-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-amis-
+      - name: Install
+        run: pnpm i
+      - name: Generate types
+        run: |
+          rm -rf tsconfig.json
+          mv tsconfig-check.json tsconfig.json
+      - name: TypeCheck
+        run: pnpm run type-check
+
+  build:
+    if: github.event_name == 'pull_request'  || github.event_name == 'push'  || github.event.inputs.job_name == 'all' || github.event.inputs.job_name == 'build'
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 10
+    strategy:
+      matrix:
+        node_version: [18.x]
+        # os: [ubuntu-latest, windows-latest]
+        os: [ubuntu-latest]
+        build_cmd: ['build']
+      fail-fast: false
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v2
+
+      - name: Set node version to ${{ matrix.node_version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node_version }}
+          cache: pnpm
+      - name: Get pnpm store directory
+        run: |
+          echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
+      - name: Setup pnpm cache
+        uses: actions/cache@v4
+        with:
+          path: ${{ env.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-amis-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-amis-
+      - name: Install
+        run: pnpm i
+
+      - name: pnpm run ${{ matrix.build_cmd }}
+        run: pnpm run ${{ matrix.build_cmd }}
+      - name: Upload  amis-adapter ${{ matrix.build_cmd }}
+        uses: actions/upload-artifact@v2
+        with:
+          name: 'amis-adapter'
+          path: dist
+  deploy:
+    if: github.event_name == 'pull_request'  || github.event_name == 'push'  || github.event.inputs.job_name == 'all' || github.event.inputs.job_name == 'deploy'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Install pnpm
+        run: corepack enable
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+          cache: pnpm
+      - name: Get pnpm store directory
+        run: |
+          echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
+      - name: Setup pnpm cache
+        uses: actions/cache@v4
+        with:
+          path: ${{ env.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-amis-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-amis-
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Build Site
+        env: 
+          PUBLIC_PATH: 'amis-adapter'      
+        run: |
+          pnpm build
+      - name: Deploy for gh-pages
+        uses: JamesIves/github-pages-deploy-action@v4.4.1
+        with:
+          branch: gh-pages
+          folder: dist
+          single-commit: true
+          clean: true

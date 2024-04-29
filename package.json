@@ -1,0 +1,64 @@
+{
+  "name": "amis-adapter",
+  "private": true,
+  "type": "module",
+  "version": "1.0.0",
+  "homepage": "https://github.com/dext7r/amis-adapter",
+  "scripts": {
+    "dev": "NODE_ENV=development rspack serve",
+    "build": "NODE_ENV=production rspack build",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
+  },
+  "author": {
+    "name": "h7ml",
+    "mail": "h7ml@qq.com",
+    "github": "https://github.com/dext7r/amis-adapter"
+  },
+  "keywords": [
+    "react",
+    "amis",
+    "amis-editor",
+    "amis-vite-react",
+    "amis-adapter",
+    "amis-adapter-react",
+    "amis-adapter-vite-react"
+  ],
+  "license": "Apache-2.0",
+  "licenses": [
+    {
+      "type": "Apache-2.0",
+      "url": "http://www.apache.org/licenses/LICENSE-2.0"
+    }
+  ],
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dext7r/amis-adapter.git"
+  },
+  "bugs": {
+    "url": "https://github.com/dext7r/amis-adapter/issues"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^6.5.2",
+    "amis": "^6.3.0",
+    "amis-editor": "^6.3.0",
+    "amis-ui": "^6.3.0",
+    "monaco-editor": "^0.48.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^2.16.0",
+    "@rspack/cli": "0.6.3",
+    "@rspack/core": "0.6.3",
+    "@rspack/plugin-react-refresh": "0.6.3",
+    "@types/react": "^18.2.48",
+    "@types/react-dom": "^18.2.18",
+    "eslint": "^9.1.1",
+    "react-refresh": "^0.14.0",
+    "typescript": "^5.4.5"
+  }
+}
