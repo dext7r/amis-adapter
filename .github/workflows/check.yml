@@ -161,7 +161,7 @@ jobs:
           github-token: ${{ secrets.AUTH_TOKEN }}
           vercel-args: '--prod'
           vercel-org-id: ${{ secrets.ORG_ID}}
-          vercel-project-id: ${{ secrets.VERCEL_PROJECT_AMIS-ADAPTER_ID}}
+          vercel-project-id: ${{ secrets.VERCEL_PROJECT_AMIS_ADAPTER_ID}}
           # working-directory: ./dist
           github-comment: true
           alias-domains: amis-adapter.h7ml.cn
