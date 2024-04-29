@@ -12,6 +12,7 @@
     "lint": "eslint .",
     "dev:docs":"pnpm --filter @amis-adapter/docs dev",
     "build:docs":"pnpm --filter @amis-adapter/docs build",
+    "build:examples:vue2.7":"pnpm --filter @examples/vue2.7 build",
     "lint:fix": "eslint . --fix",
     "type-check": "vue-tsc --noEmit"
   },
