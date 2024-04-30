@@ -144,6 +144,7 @@ jobs:
         env:
           PUBLIC_PATH_PREFIX: '/amis-adapter/'
         run: |
+          pnpm build:examples:amis-editor-react
           chmod +x build.sh
           ./build.sh
       # - name: Deploy for gh-pages

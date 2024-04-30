@@ -39,7 +39,6 @@ rm -rf dist
 pnpm build:docs || true
 pnpm build:examples:vue2.7 || true
 pnpm build:examples:vue-editor2.7 || true
-pnpm build:examples:amis-editor-react || true
 
 # 创建目录
 mkdir -p dist/dist/vue2.7 dist/dist/staticVue2.7
@@ -82,8 +81,8 @@ echo "文件移动完成"
 echo "压缩前文件大小:"
 du -sh dist
 
-# # 压缩 dist 目录中的所有文件
-# find dist -type f \( -name "*.js" -o -name "*.css" -o -name "*.html" -o -name "*.svg" -o -name "*.json" \) -exec gzip -k -f {} \;
+# 压缩 dist 目录中的所有文件
+find dist -type f \( -name "*.js" -o -name "*.css" -o -name "*.html" -o -name "*.svg" -o -name "*.json" \) -exec gzip -k -f {} \;
 
 # 计算压缩后文件大小并显示
 echo "压缩后文件大小:"
