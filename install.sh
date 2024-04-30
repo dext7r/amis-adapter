@@ -5,14 +5,6 @@ echo "当前目录: $(pwd)"
 echo "删除node_modules pnpm-lock.yaml pnpm-workspace.yaml dist目录"
 
 rm -rfv node_modules pnpm-lock.yaml pnpm-workspace.yaml dist
-ls -l
-
-# 检查是否删除成功
-if [ $? -eq 0 ]; then
-  echo "删除成功！"
-else
-  echo "删除失败！"
-fi
 
 touch install.log
 # 记录开始时间

@@ -9,8 +9,6 @@ echo "当前 commit date: $(git log --format=%ad -n 1 HEAD)"
 echo "当前 commit hash: $(git rev-parse --short HEAD)"
 echo "当前 commit branch: $(git rev-parse --abbrev-ref HEAD)"
 
-ls -l
-
 touch build.log
 
 # 获取当前用户名
@@ -22,7 +20,6 @@ else
     echo "当前用户为 $current_user，不包含 'h7ml'，执行 git reset 操作。"
     echo "当前目录: $(pwd)"
     git reset --hard $(git rev-parse --short HEAD)
-    ls -l
 fi
 # 设置环境变量
 export PUBLIC_PATH_PREFIX='/amis-adapter/'

@@ -24,7 +24,7 @@ export default (/** if you want to use mode : { mode } */) => {
           assetFileNames: 'staticVue-editor2.7/[ext]/[name]-[hash].[ext]',
         },
       },
-      sourcemap: true,
+      sourcemap: false,
     },
     // base: './',
     resolve: {

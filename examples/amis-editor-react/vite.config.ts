@@ -20,7 +20,7 @@ export default defineConfig({
         assetFileNames: 'static-amis-editor-react/[ext]/[name]-[hash].[ext]',
       },
     },
-    sourcemap: true,
+    sourcemap: false,
   },
   plugins: [
     react(),
