@@ -1,7 +1,7 @@
 import path from 'node:path'
 import { defineConfig } from 'vite'
 import { createVuePlugin } from 'vite-plugin-vue2'
-import viteCompression from 'vite-plugin-compression'
+// import viteCompression from 'vite-plugin-compression'
 import monacoEditorPlugin from 'vite-plugin-monaco-editor'
 
 const REPLACEMENT = `${path.resolve(__dirname, './src')}/`
@@ -46,7 +46,7 @@ export default (/** if you want to use mode : { mode } */) => {
         ? addPrefixPlugin('/vue-editor2.7')
         : null,
       createVuePlugin(/* options */),
-      viteCompression(),
+      // viteCompression(),
       monacoEditorPlugin.default({}),
     ],
   })

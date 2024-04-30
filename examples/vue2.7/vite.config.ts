@@ -1,8 +1,8 @@
 import path from 'node:path'
 import { defineConfig } from 'vite'
-import legacy from '@vitejs/plugin-legacy'
+// import legacy from '@vitejs/plugin-legacy'
 import { createVuePlugin } from 'vite-plugin-vue2'
-import viteCompression from 'vite-plugin-compression'
+// import viteCompression from 'vite-plugin-compression'
 import { viteStaticCopy } from 'vite-plugin-static-copy'
 
 const REPLACEMENT = `${path.resolve(__dirname, './src')}/`
@@ -54,11 +54,11 @@ export default (/** if you want to use mode : { mode } */) => {
         ],
       }),
       createVuePlugin(/* options */),
-      legacy({
-        targets: ['ie >= 11'],
-        additionalLegacyPolyfills: ['regenerator-runtime/runtime'],
-      }),
-      viteCompression(),
+      // legacy({
+      //   targets: ['ie >= 11'],
+      //   additionalLegacyPolyfills: ['regenerator-runtime/runtime'],
+      // }),
+      // viteCompression(),
     ],
   })
 }
