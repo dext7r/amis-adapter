@@ -92,17 +92,5 @@ end_time=$(date +%s)
 duration=$((end_time - start_time))
 echo "依赖安装和打包耗时: ${duration} 秒"
 
-# 实时日志输出
-if [ -f "install.log" ]; then
-  # 日志文件存在，执行实时日志输出
-  echo "实时日志输出:"
-  tail -f ./install.log
-  exit 0
-else
-  # 日志文件不存在，输出提示信息
-  echo "日志文件不存在，无法输出实时日志。"
-  exit 0
-fi
-
 # 成功后退出
 exit 0

@@ -88,17 +88,5 @@ echo "🌍 vue2.7 && amis-editor@5.2.0 基于vue@2.7和amis-editor@5.2.0 使用�
 echo "🎨 vue3 && amis-editor@5.2.0 基于vue@3 和amis-editor@5.2.0 使用示例 https://amis-editor-webpack.h7ml.cn/"
 echo "🔥 react@18 && amis-editor@5.2.0 基于react@18 和amis-editor@5.2.0 使用示例 https://amis-adapter.h7ml.cn/amis-editor-react"
 
-# 实时日志输出
-if [ -f "build.log" ]; then
-    # 日志文件存在，执行实时日志输出
-    echo "实时日志输出:"
-    tail -f ./build.log
-    exit 0
-else
-    # 日志文件不存在，输出提示信息
-    echo "日志文件不存在，无法输出实时日志。"
-    exit 0
-fi
-
 # 成功后退出
 exit 0
