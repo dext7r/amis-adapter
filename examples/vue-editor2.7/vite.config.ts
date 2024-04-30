@@ -1,4 +1,4 @@
-import path from 'node:path'
+import path, { join } from 'node:path'
 import { defineConfig } from 'vite'
 import { createVuePlugin } from 'vite-plugin-vue2'
 // import viteCompression from 'vite-plugin-compression'
@@ -47,7 +47,12 @@ export default (/** if you want to use mode : { mode } */) => {
         : null,
       createVuePlugin(/* options */),
       // viteCompression(),
-      monacoEditorPlugin.default({}),
+      (monacoEditorPlugin as any).default({
+        languageWorkers: ['json', 'editorWorkerService'],
+        customDistPath: (root, buildOutDir) => {
+          return join(root, `${buildOutDir}/monacoeditorwork`)
+        },
+      }),
     ],
   })
 }

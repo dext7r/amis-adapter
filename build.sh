@@ -9,6 +9,9 @@ echo "当前 commit date: $(git log --format=%ad -n 1 HEAD)"
 echo "当前 commit hash: $(git rev-parse --short HEAD)"
 echo "当前 commit branch: $(git rev-parse --abbrev-ref HEAD)"
 
+rm -rf build.log
+touch build.log
+
 # 获取当前用户名
 current_user=$(whoami)
 # 判断当前用户名是否包含 "h7ml"
@@ -25,14 +28,27 @@ export PUBLIC_PATH_PREFIX='/amis-adapter/'
 # 输出环境变量值
 echo "PUBLIC_PATH_PREFIX set to: $PUBLIC_PATH_PREFIX"
 
-# 清除 dist 目录
-#rm -rf dist
+# 安装构建项目
+install_and_build() {
+    # 记录开始时间
+    start_build_time=$(date +%s)
+    echo "当前时间: $(date +%Y-%m-%d_%H:%M:%S)"
+    echo "正在执行命令 pnpm $1"
+    pnpm $1
+#    pnpm $1 > /dev/null 2>&1 && cd -
+    echo "当前时间: $(date +%Y-%m-%d_%H:%M:%S)"
+    echo "执行 pnpm $1 完成"
+    # 计算耗时并显示
+    end_build_time=$(date +%s)
+    build_duration=$((end_build_time - start_build_time))
+    echo "依赖安装和打包耗时: ${build_duration} 秒"
+}
 
-# 执行 pnpm 安装和构建操作，并将日志输出重定向到 /dev/null
-pnpm install > /dev/null 2>&1
-pnpm build:docs > /dev/null 2>&1 || true
-pnpm build:examples:vue2.7 > /dev/null 2>&1 || true
-pnpm build:examples:amis-editor-react > /dev/null 2>&1 || true
+# 执行函数安装和构建项目
+install_and_build "install"
+install_and_build "build:docs"
+install_and_build "build:examples:vue2.7"
+install_and_build "build:examples:amis-editor-react"
 
 # 创建目录
 mkdir -p dist/vue2.7 dist/staticVue2.7
@@ -71,9 +87,9 @@ echo "🎨 vue3 && amis-editor@5.2.0 基于vue@3 和amis-editor@5.2.0 使用示�
 echo "🔥 react@18 && amis-editor@5.2.0 基于react@18 和amis-editor@5.2.0 使用示例 https://amis-adapter.h7ml.cn/amis-editor-react"
 
 # 实时日志输出
-if [ -f "/var/log/*/*.log" ]; then
+if [ -f "build.log" ]; then
     # 日志文件存在，执行实时日志输出
-    tail -f /var/log/*/*.log
+    tail -f ./build.log
 else
     # 日志文件不存在，输出提示信息
     echo "日志文件不存在，无法输出实时日志。"

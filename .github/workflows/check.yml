@@ -111,7 +111,7 @@ jobs:
         with:
           name: 'amis-adapter'
           path: dist
-  deploy:
+  deploy-to-vercel:
     if: github.event_name == 'pull_request'  || github.event_name == 'push'  || github.event.inputs.job_name == 'all' || github.event.inputs.job_name == 'deploy'
     runs-on: ubuntu-latest
     steps:
@@ -152,13 +152,7 @@ jobs:
         run: |
           chmod +x build.sh
           ./build.sh
-      # - name: Deploy for gh-pages
-      #   uses: JamesIves/github-pages-deploy-action@v4.4.1
-      #   with:
-      #     branch: gh-pages
-      #     folder: dist
-      #     single-commit: true
-          # clean: true
+
       - name: Deploy to amis-adapter.h7ml.cn
         uses: amondnet/vercel-action@v25
         with:
@@ -170,3 +164,13 @@ jobs:
           # working-directory: ./dist
           github-comment: true
           alias-domains: amis-adapter.h7ml.cn
+        id: vercel
+
+      - name: Deploy to GitHub Pages
+        if: failure()
+        uses: JamesIves/github-pages-deploy-action@v4.4.1
+        with:
+          branch: gh-pages
+          folder: dist
+          single-commit: true
+          clean: true

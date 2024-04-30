@@ -4,7 +4,9 @@ echo "开始安装依赖并打包项目"
 echo "当前目录: $(pwd)"
 echo "删除node_modules pnpm-lock.yml pnpm-workspace.yml dist目录"
 
-rm -rf node_modules pnpm-lock.yml pnpm-workspace.yml dist
+rm -rf node_modules pnpm-lock.yml pnpm-workspace.yml dist install.log
+
+touch install.log
 # 记录开始时间
 start_time=$(date +%s)
 
@@ -38,7 +40,17 @@ echo "PUBLIC_PATH_PREFIX set to: $PUBLIC_PATH_PREFIX"
 
 # 安装构建项目
 install_and_build() {
-    cd "$1" && yarn install > /dev/null 2>&1 && yarn build > /dev/null 2>&1 && cd -
+    # 记录开始时间
+    start_build_time=$(date +%s)
+    echo "当前时间: $(date +%Y-%m-%d_%H:%M:%S)"
+    echo "正在执行 $1 项目安装和构建操作"
+    cd "$1" && rm -rf  dist yarn.lock && yarn install > /dev/null 2>&1 && yarn build > /dev/null 2>&1 && cd -
+    echo "当前时间: $(date +%Y-%m-%d_%H:%M:%S)"
+    echo "执行 $1 项目安装和构建操作完成"
+    # 计算耗时并显示
+    end_build_time=$(date +%s)
+    build_duration=$((end_build_time - start_build_time))
+    echo "依赖安装和打包耗时: ${build_duration} 秒"
 }
 
 # 执行函数安装和构建项目
@@ -72,6 +84,15 @@ du -sh dist
 end_time=$(date +%s)
 duration=$((end_time - start_time))
 echo "依赖安装和打包耗时: ${duration} 秒"
+
+# 实时日志输出
+if [ -f "install.log" ]; then
+    # 日志文件存在，执行实时日志输出
+    tail -f ./install.log
+else
+    # 日志文件不存在，输出提示信息
+    echo "日志文件不存在，无法输出实时日志。"
+fi
 
 # 成功后退出
 exit 0

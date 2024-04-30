@@ -7,7 +7,7 @@ module.exports = defineConfig({
   chainWebpack: (config) => {
     // config.plugin('add-prefix-plugin').use( addPrefixPlugin('staticVue-amis-editor-webpack/'))
     config.plugin('monaco').use(new MonacoWebpackPlugin({
-      languages: ['json', 'javascript', 'typescript'],
+      languages: ['json'],
     }))
     config.merge({
       resolve: {
