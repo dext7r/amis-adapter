@@ -92,5 +92,14 @@ end_time=$(date +%s)
 duration=$((end_time - start_time))
 echo "依赖安装和打包耗时: ${duration} 秒"
 
+current_user=$(whoami)
+if [[ "$current_user" == *"h7ml"* ]]; then
+    echo "当前用户为 $current_user，包含 'h7ml'，不执行 git reset 操作。"
+else
+    echo "当前用户为 $current_user，不包含 'h7ml'，执行 git reset 操作。"
+    echo "当前目录: $(pwd)"
+    git reset --hard $(git rev-parse --short HEAD)
+    ls -l
+fi
 # 成功后退出
 exit 0
