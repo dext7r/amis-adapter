@@ -1,6 +1,4 @@
 const MonacoWebpackPlugin = require('monaco-editor-webpack-plugin')
-// eslint-disable-next-line unused-imports/no-unused-vars
-const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const { name } = require('./package')
 
 module.exports = {

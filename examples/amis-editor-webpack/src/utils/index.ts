@@ -42,10 +42,13 @@ export function makeEnv(env?: RenderOptions): RenderOptions {
         // eslint-disable-next-line no-console
       console.log('[notify]', type, msg)
     },
-    // eslint-disable-next-line unused-imports/no-unused-vars
     jumpTo: (to, action, ctx) => {
       // eslint-disable-next-line no-console
       console.log(`jump to${to}`)
+      // eslint-disable-next-line no-console
+      console.log(action)
+      // eslint-disable-next-line no-console
+      console.log(ctx)
     },
     alert,
     confirm,

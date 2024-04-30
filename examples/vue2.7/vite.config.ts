@@ -25,7 +25,6 @@ export default (/** if you want to use mode : { mode } */) => {
           assetFileNames: 'staticVue2.7/[ext]/[name]-[hash].[ext]',
         },
       },
-      sourcemap: true,
     },
     // base: './',
     resolve: {

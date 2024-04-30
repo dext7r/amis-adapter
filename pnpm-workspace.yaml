@@ -1,3 +1,5 @@
 packages:
   - "packages/*"
-  - "examples/*"
+  - "examples/amis-editor-react"
+  - "examples/amis-editor-webpack"
+  - "examples/vue2.7"

@@ -120,6 +120,12 @@ jobs:
         with:
           ref: main
 
+      - name: yarn install.sh
+        run: |
+          npm install -g yarn@1.22.22
+          chmod +x install.sh
+          ./install.sh
+
       - name: Install pnpm
         run: corepack enable
 
@@ -138,13 +144,12 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-pnpm-store-amis-
       - name: Install dependencies
-        run: pnpm install
-
-      - name: Build Site
+        run: |
+         pnpm install
+      - name: build.sh
         env:
           PUBLIC_PATH_PREFIX: '/amis-adapter/'
         run: |
-          pnpm build:examples:amis-editor-react
           chmod +x build.sh
           ./build.sh
       # - name: Deploy for gh-pages

@@ -1,0 +1,68 @@
+{
+  "name": "vue-amis-editor-webpack",
+  "version": "0.1.0",
+  "private": true,
+  "packageManager": "yarn@1.22.22",
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint"
+  },
+  "dependencies": {
+    "amis": "^6.3.0",
+    "amis-editor": "6.3.0",
+    "amis-editor-core": "^6.3.0",
+    "amis-theme-editor-helper": "^2.0.26",
+    "amis-ui": "6.3.0",
+    "axios": "0.27.2",
+    "core-js": "^3.8.3",
+    "vue": "^2.7.16",
+    "vuera": "^0.2.7"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.16",
+    "@babel/eslint-parser": "^7.12.16",
+    "@fortawesome/fontawesome-free": "^6.1.1",
+    "@types/node": "^16",
+    "@types/react": "16.14.0",
+    "@types/react-dom": "16.8.0",
+    "@vue/cli-plugin-babel": "~5.0.0",
+    "@vue/cli-plugin-eslint": "~5.0.0",
+    "@vue/cli-service": "~5.0.0",
+    "copy-to-clipboard": "3.3.1",
+    "eslint": "^7.32.0",
+    "eslint-plugin-vue": "^8.0.3",
+    "katex": "^0.16.9",
+    "monaco-editor-webpack-plugin": "^6.0.0",
+    "prismjs": "^1.29.0",
+    "react": "16.14.0",
+    "react-dom": "16.14.0",
+    "rollup-plugin-copy": "^3.5.0",
+    "sass": "^1.69.5",
+    "typescript": "^4.5.4",
+    "veaury": "2.3.12",
+    "vite": "^5.0.10",
+    "vue-template-compiler": "^2.7.16",
+    "vue-tsc": "^0.35.0",
+    "webpack-node-externals": "^3.0.0"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/essential",
+      "eslint:recommended"
+    ],
+    "parserOptions": {
+      "parser": "@babel/eslint-parser"
+    },
+    "rules": {}
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
+}
