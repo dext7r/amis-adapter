@@ -1,6 +1,7 @@
 {
   "name": "amis-adapter",
   "description": "@baidu/amis的生态扩展",
+  "packageManager": "pnpm@9.0.4",
   "private": true,
   "type": "module",
   "version": "1.0.0",

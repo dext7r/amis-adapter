@@ -9,7 +9,8 @@ echo "当前 commit date: $(git log --format=%ad -n 1 HEAD)"
 echo "当前 commit hash: $(git rev-parse --short HEAD)"
 echo "当前 commit branch: $(git rev-parse --abbrev-ref HEAD)"
 
-rm -rf build.log
+ls -l
+
 touch build.log
 
 # 获取当前用户名
@@ -21,6 +22,7 @@ else
     echo "当前用户为 $current_user，不包含 'h7ml'，执行 git reset 操作。"
     echo "当前目录: $(pwd)"
     git reset --hard $(git rev-parse --short HEAD)
+    ls -l
 fi
 # 设置环境变量
 export PUBLIC_PATH_PREFIX='/amis-adapter/'
@@ -89,10 +91,13 @@ echo "🔥 react@18 && amis-editor@5.2.0 基于react@18 和amis-editor@5.2.0 使
 # 实时日志输出
 if [ -f "build.log" ]; then
     # 日志文件存在，执行实时日志输出
+    echo "实时日志输出:"
     tail -f ./build.log
+    exit 0
 else
     # 日志文件不存在，输出提示信息
     echo "日志文件不存在，无法输出实时日志。"
+    exit 0
 fi
 
 # 成功后退出
