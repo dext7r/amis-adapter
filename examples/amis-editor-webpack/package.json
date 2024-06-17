@@ -1,8 +1,7 @@
 {
-  "name": "amis-editor-webpack",
+  "name": "@amis-adapter/amis-editor-webpack",
   "version": "0.1.0",
   "private": true,
-  "homepage": ".",
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.3",
     "@rescripts/cli": "^0.0.16",
@@ -51,6 +50,23 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "homepage": "https://github.com/dext7r/amis-adapter",
+  "licenses": [
+    {
+      "type": "Apache-2.0",
+      "url": "http://www.apache.org/licenses/LICENSE-2.0"
+    }
+  ],
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/h7ml/amis-vite-react.git"
+  },
+  "bugs": {
+    "url": "https://github.com/h7ml/amis-vite-react/issues"
   },
   "devDependencies": {
     "@rescripts/utilities": "^0.0.8",

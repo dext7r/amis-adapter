@@ -1,5 +1,5 @@
 {
-  "name": "@examples/amis-editor-react",
+  "name": "@amis-adapter/amis-editor-react",
   "private": true,
   "version": "0.0.1",
   "type": "module",

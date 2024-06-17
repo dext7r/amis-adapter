@@ -1,5 +1,5 @@
 {
-  "name": "vue-amis-editor-webpack",
+  "name": "@amis-adapter/vue-amis-editor-webpack",
   "version": "0.1.0",
   "private": true,
   "packageManager": "yarn@1.22.22",
@@ -59,6 +59,23 @@
       "parser": "@babel/eslint-parser"
     },
     "rules": {}
+  },
+  "homepage": "https://github.com/dext7r/amis-adapter",
+  "licenses": [
+    {
+      "type": "Apache-2.0",
+      "url": "http://www.apache.org/licenses/LICENSE-2.0"
+    }
+  ],
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/h7ml/amis-vite-react.git"
+  },
+  "bugs": {
+    "url": "https://github.com/h7ml/amis-vite-react/issues"
   },
   "browserslist": [
     "> 1%",
