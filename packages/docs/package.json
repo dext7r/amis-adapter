@@ -1,7 +1,7 @@
 {
   "name": "@amis-adapter/docs",
   "version": "1.0.0",
-  "private": true,
+  "private": false,
   "scripts": {
     "dev": "rspress dev",
     "build": "rspress build",
@@ -17,5 +17,9 @@
   },
   "devDependencies": {
     "@types/node": "^16"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org",
+    "access": "public"
   }
 }

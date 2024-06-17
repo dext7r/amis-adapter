@@ -1,7 +1,7 @@
 {
   "name": "@amis-adapter/vue-amis-editor-webpack",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "packageManager": "yarn@1.22.22",
   "scripts": {
     "serve": "vue-cli-service serve",
@@ -68,7 +68,8 @@
     }
   ],
   "publishConfig": {
-    "registry": "https://registry.npmjs.org"
+    "registry": "https://registry.npmjs.org",
+    "access": "public"
   },
   "repository": {
     "type": "git",
