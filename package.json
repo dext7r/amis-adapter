@@ -2,7 +2,7 @@
   "name": "amis-adapter",
   "description": "@baidu/amis的生态扩展",
   "packageManager": "pnpm@9.0.4",
-  "private": true,
+  "private": false,
   "type": "module",
   "version": "1.0.0",
   "homepage": "https://github.com/dext7r/amis-adapter",
